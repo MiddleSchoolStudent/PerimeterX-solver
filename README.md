@@ -1,2 +1,2 @@
-# PerimeterX-solver
-PerimeterX - жменька невдах
+# PerimeterX Solver
+PerimeterX - Handicapped
