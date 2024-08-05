@@ -1,0 +1,329 @@
+var s = document.createElement('script');
+s.src = 'https://epsf.ticketmaster.com/asset/iamNotaRobot.js';
+s.charset = 'utf-8';
+document.head.appendChild(s);
+var nd_enabled = false;
+var client_ip = '24.225.131.119';
+var dt = '2024-08-05T19:27:30Z-400';
+var h = window.location.host;
+var d_f = new Map([["www.ticketmaster.co.uk", ["d", "g"]], ["my.ticketmaster.com", ["d"]], ["my.livenation.com", ["d"]], ["my.ticketmaster.ca", ["d"]], ["my.ticketmaster.ae", ["p"]], ["my.ticketmaster.at", ["p"]], ["my.ticketmaster.be", ["p"]], ["my.ticketmaster.ch", ["p"]], ["my.ticketmaster.co.nz", ["p"]], ["my.ticketmaster.co.uk", ["p"]], ["my.ticketmaster.co.za", ["p"]], ["my.ticketmaster.com.au", ["p"]], ["my.ticketmaster.com.mx", ["p"]], ["my.ticketmaster.cz", ["p"]], ["my.ticketmaster.de", ["p"]], ["my.ticketmaster.dk", ["p"]], ["my.ticketmaster.es", ["p"]], ["my.ticketmaster.fi", ["p"]], ["my.ticketmaster.ie", ["p"]], ["my.ticketmaster.nl", ["p"]], ["my.ticketmaster.no", ["p"]], ["my.ticketmaster.pl", ["p"]], ["my.ticketmaster.se", ["p"]], ["citylive.trium.fr", ["p"]], ["am.ticketmaster.com", ["d"]], ["auth.ticketmaster.com", ["d", "g"]], ["payments.ticketmaster.com", ["p"]], ["payments.ticketmaster.co.uk", ["p"]], ["www.ticketmaster.com", ["d", "p", "g"]], ["www.ticketmaster.ca", ["d", "p", "g"]], ["checkout.ticketmaster.com", ["d", "p", "g"]], ["www.ticketmaster.ae", ["p", "g", "d"]], ["www.ticketmaster.at", ["p", "g", "d"]], ["www.ticketmaster.se", ["p", "g", "d"]], ["www.ticketmaster.be", ["p", "g", "d"]], ["www.ticketmaster.ch", ["p", "g", "d"]], ["www.ticketmaster.cz", ["p", "g", "d"]], ["www.ticketmaster.de", ["p", "g", "d"]], ["www.ticketmaster.dk", ["p", "g", "d"]], ["www.ticketmaster.es", ["p", "g", "d"]], ["www.ticketmaster.fi", ["p", "g", "d"]], ["www.ticketmaster.nl", ["p", "g", "d"]], ["www.ticketmaster.no", ["p", "g", "d"]], ["www.ticketmaster.pl", ["p", "g", "d"]], ["www.ticketmaster.co.za", ["p", "g", "d"]], ["beta.ticketmaster.ae", ["p", "g", "d"]], ["beta.ticketmaster.at", ["p", "g", "d"]], ["beta.ticketmaster.se", ["p", "g", "d"]], ["beta.ticketmaster.be", ["p", "g", "d"]], ["beta.ticketmaster.ch", ["p", "g", "d"]], ["beta.ticketmaster.cz", ["p", "g", "d"]], ["beta.ticketmaster.de", ["p", "g", "d"]], ["beta.ticketmaster.dk", ["p", "g", "d"]], ["beta.ticketmaster.es", ["p", "g", "d"]], ["beta.ticketmaster.fi", ["p", "g", "d"]], ["beta.ticketmaster.nl", ["p", "g", "d"]], ["beta.ticketmaster.no", ["p", "g", "d"]], ["beta.ticketmaster.pl", ["p", "g", "d"]], ["beta.ticketmaster.co.za", ["p", "g", "d"]], ["alpha.ticketmaster.ae", ["p", "g", "d"]], ["alpha.ticketmaster.at", ["p", "g", "d"]], ["alpha.ticketmaster.se", ["p", "g", "d"]], ["alpha.ticketmaster.be", ["p", "g", "d"]], ["alpha.ticketmaster.ch", ["p", "g", "d"]], ["alpha.ticketmaster.cz", ["p", "g", "d"]], ["alpha.ticketmaster.de", ["p", "g", "d"]], ["alpha.ticketmaster.dk", ["p", "g", "d"]], ["alpha.ticketmaster.es", ["p", "g", "d"]], ["alpha.ticketmaster.fi", ["p", "g", "d"]], ["alpha.ticketmaster.nl", ["p", "g", "d"]], ["alpha.ticketmaster.no", ["p", "g", "d"]], ["alpha.ticketmaster.pl", ["p", "g", "d"]], ["alpha.ticketmaster.co.za", ["p", "g", "d"]], ["www.zz.ticketmaster.eu", ["p", "d"]], ["recette.ticketmaster.fr", ["p"]], ["billetterie.groupama-stadium.com", ["p"]], ["billetterie-stg.groupama-stadium.com", ["p"]], ["billetterie.ldlcarena.com", ["p"]], ["billetterie-stg.ldlcarena.com", ["p"]], ["billetterie.cultura.com", ["p"]], ["billetterie-stg.accorarena.com", ["p"]], ["billetterie.accorarena.com", ["p"]], ["recette.spectacles.carrefour.fr", ["p"]], ["spectacles.carrefour.fr", ["p"]], ["www.spectacles.carrefour.fr", ["p"]], ["www.spectaclescarrefour.leparisien.fr", ["p"]], ["www.leclercbilletterie.com", ["p"]], ["tickets.cdiscount.com", ["p"]], ["billetterie.adidasarena.com", ["p"]], ["billetterie.arkeaarena.com", ["p"]], ["billetterie.arenaaix.com", ["p"]], ["www.loisirs.showroomprive.com", ["p"]], ["demo.ticketmaster.fr", ["g", "p"]], ["www.ticketmaster.fr", ["g", "p"]], ["recette.spectacles.carrefour.fr", ["p"]], ["www.ticketmaster.ie", ["d", "g"]], ["www.ticketmaster.com.au", ["d", "g"]], ["nflhospitality.tmtickets.de", ["d", "g"]], ["nflhospitality.uat.tmtickets.de", ["d", "g"]], ["concerts.livenation.com", ["d", "g"]], ["ticketmaster.com.mx", ["d", "g"]], ["www.ticketmaster.com.mx", ["d", "g"]], ["billetterie.aegpresents.fr", ["g", "p"]]]);
+let features = d_f.get(h);
+if (features && features.length > 0) {
+    for (let i = 0; i < features.length; i++) {
+        if (features[i] == 'h') {
+            try {
+                var tagLoaded, sm, humanConfig = {}, humanScriptSrc = 'https://s.jwndnv.com/static/2.64.1/pagespeed.js?mo=2&ci=411638&dt=4116381628729041890000&pd=acc&spa=1&dom=s.jwndnv.com', maxFailCount = 5, debug = !0, maxHeaderSize = 4e3, appName = 'tm_pp', regex = 'am.ticketmaster.com' === h || 'stg1-am.ticketmaster.com' === h ? /\/render-ticket\/secure-barcode/ : /.+/, humanRequestFailCount = (setHumanConfig({
+                    protectedRequestRules: [{
+                        apiDomain: h,
+                        pathRegexes: [regex]
+                    }],
+                    excludedRequestRules: []
+                }),
+                0), humanScriptURLdomain = getLocation(humanScriptSrc).hostname, signalHandler = function(e) {
+                    for (var t = {
+                        OZ_TC: e.OZ_TC
+                    }, n = e.OZ_DT, a = 0; t['OZ_DT' + a] = n.substring(0, maxHeaderSize),
+                    n = n.substring(maxHeaderSize); a++)
+                        ;
+                    var r = utf8_to_b64(e.OZ_SG);
+                    for (a = 0; ; a++) {
+                        1;
+                        if (t['OZ_SG' + a] = r.substring(0, maxHeaderSize),
+                        !(r = r.substring(maxHeaderSize)))
+                            break
+                    }
+                    return t
+                };
+                function setHumanConfig(e) {
+                    humanConfig = e
+                }
+                function utf8_to_b64(e) {
+                    try {
+                        return btoa(encodeURIComponent(e).replace(/%([0-9A-F]{2})/g, function(e, t) {
+                            return String.fromCharCode(parseInt(t, 16))
+                        }))
+                    } catch (e) {
+                        return errorHandler(e, 'Error converting UTF8 to B64.'),
+                        ''
+                    }
+                }
+                function errorHandler(e, t) {
+                    t = (t += ' (') + (null != e ? e.message : 'null') + ')';
+                    debug && console.log(t)
+                }
+                function buildRouteRegex() {
+                    try {
+                        for (var e = 0; e < humanConfig.protectedRequestRules.length; e++)
+                            humanConfig.protectedRequestRules[e].domainRegex = new RegExp(humanConfig.protectedRequestRules[e].apiDomain,'i'),
+                            0 != humanConfig.protectedRequestRules[e].pathRegexes.length && (t = humanConfig.protectedRequestRules[e].pathRegexes.map(e=>'string' == typeof e ? e : new RegExp(e).source).join('|'),
+                            humanConfig.protectedRequestRules[e].routesRegex = new RegExp(t,'i'));
+                        for (var t, e = 0; e < humanConfig.excludedRequestRules.length; e++)
+                            humanConfig.excludedRequestRules[e].domainRegex = new RegExp(humanConfig.excludedRequestRules[e].apiDomain,'i'),
+                            0 != humanConfig.excludedRequestRules[e].pathRegexes.length && (t = humanConfig.excludedRequestRules[e].pathRegexes.map(e=>'string' == typeof e ? e : new RegExp(e).source).join('|'),
+                            humanConfig.excludedRequestRules[e].routesRegex = new RegExp(t,'i'))
+                    } catch (e) {
+                        errorHandler(e, 'Error creating Regex.')
+                    }
+                }
+                function getLocation(e) {
+                    var t = e.match(/^(https?\:)\/\/(([^:\/?#]*)(?:\:([0-9]+))?)([\/]{0,1}[^?#]*)(\?[^#]*|)(#.*|)$/);
+                    return t && {
+                        href: e,
+                        protocol: t[1],
+                        host: t[2],
+                        hostname: t[3],
+                        port: t[4],
+                        pathname: t[5],
+                        search: t[6],
+                        hash: t[7]
+                    }
+                }
+                function checkRoute(t, n) {
+                    try {
+                        return 0 < humanConfig.protectedRequestRules.filter(e=>!(!e.domainRegex.test(t) || !e.routesRegex.test(n))).length && 0 == humanConfig.excludedRequestRules.filter(e=>!(!e.domainRegex.test(t) || !e.routesRegex.test(n))).length
+                    } catch (e) {
+                        return errorHandler(e, 'Failed while comparing XHR Route to Regex.'),
+                        !1
+                    }
+                }
+                var ht = document.createElement('script')
+                  , hs = (ht.type = 'text/javascript',
+                ht.src = humanScriptSrc,
+                tagLoaded = new Promise(function(e, t) {
+                    ht.onload = function() {
+                        try {
+                            sm = window.$$$.start({
+                                si: appName
+                            })
+                        } catch (e) {
+                            t()
+                        }
+                        e()
+                    }
+                }
+                ).catch(e=>{
+                    errorHandler(e, 'Error in tagLoaded Promise.')
+                }
+                ),
+                document.getElementsByTagName('script')[0]);
+                hs.parentNode.insertBefore(ht, hs)
+            } catch (e) {
+                errorHandler(e, 'failed while creating Script Object.')
+            }
+            buildRouteRegex(),
+            function() {
+                try {
+                    var t = XMLHttpRequest.prototype.open;
+                    XMLHttpRequest.prototype.open = function() {
+                        if (maxFailCount <= humanRequestFailCount)
+                            return t.apply(this, [].slice.call(arguments));
+                        try {
+                            this._method = arguments[0];
+                            return /^https?:\/\//i.test(arguments[1]) ? this._urlObj = getLocation(arguments[1]) : this._urlObj = getLocation(new URL(arguments[1],document.baseURI).href),
+                            this._urlObj.hostname.toLowerCase() == humanScriptURLdomain.toLowerCase() ? this._dontPatch = !0 : this._dontPatch = !1,
+                            this._urlObj && !checkRoute(this._urlObj.hostname, this._urlObj.pathname) && (this._dontPatch = !0),
+                            this._async = arguments.length < 3 || arguments[2],
+                            t.apply(this, [].slice.call(arguments))
+                        } catch (e) {
+                            return humanRequestFailCount++,
+                            console.log(e),
+                            t.apply(this, [].slice.call(arguments))
+                        }
+                    }
+                } catch (e) {
+                    errorHandler(e, 'Failed while monkey patching XMLHttpRequest.open().')
+                }
+                try {
+                    var r = XMLHttpRequest.prototype.send;
+                    XMLHttpRequest.prototype.send = function(a) {
+                        maxFailCount <= humanRequestFailCount || this._dontPatch ? r.call(this, a) : tagLoaded.then(()=>{
+                            sm.report().then(signalHandler).then(e=>{
+                                for (var t = Object.keys(e), n = 0; n < t.length; n++)
+                                    this.setRequestHeader(t[n], e[t[n]]);
+                                r.call(this, a)
+                            }
+                            ).catch(e=>{
+                                humanRequestFailCount++,
+                                errorHandler(e, 'Error in Live Signal Route report() call.'),
+                                r.call(this, a)
+                            }
+                            )
+                        }
+                        ).catch(e=>{
+                            humanRequestFailCount++,
+                            r.call(this, a)
+                        }
+                        )
+                    }
+                } catch (e) {
+                    errorHandler(e, 'Failed while monkey patching XMLHttpRequest.send().')
+                }
+            }();
+            try {
+                let i = window.fetch;
+                window.fetch = async function(o, s) {
+                    return maxFailCount <= humanRequestFailCount ? i.call(this, o, s) : tagLoaded.then(()=>{
+                        var e, t;
+                        return t = ('string' != typeof o || /^https?:\/\//i.test(o) ? (e = getLocation('string' == typeof o ? new URL(o).href : o.url).hostname,
+                        getLocation('string' == typeof o ? new URL(o).href : o.url)) : (e = getLocation(new URL(o,document.baseURI).href).hostname,
+                        getLocation(new URL(o,document.baseURI).href))).pathname,
+                        e.toLowerCase() != humanScriptURLdomain.toLowerCase() && checkRoute(e, t) ? sm.report().then(signalHandler).then(e=>{
+                            for (var t = new Request(o,s), n = new Headers(t.headers), a = Object.keys(e), r = 0; r < a.length; r++)
+                                n.append(a[r], e[a[r]]);
+                            return i.call(this, t, {
+                                headers: n
+                            })
+                        }
+                        ).catch(e=>(humanRequestFailCount++,
+                        errorHandler(e, 'Error in Live Signal Route report() call.'),
+                        i.call(this, o, s))) : i.call(this, o, s)
+                    }
+                    ).catch(e=>(humanRequestFailCount++,
+                    errorHandler(e, 'The tag load promise failed'),
+                    i.call(this, o, s)))
+                }
+            } catch (e) {
+                errorHandler(e, 'Failed while monkey patching fetch().')
+            }
+        } else if (features[i] == 'd') {
+            var eps_dg = 'd';
+            s = document.createElement('script');
+            s.src = 'https://epsf.ticketmaster.com/eps-d';
+            s.charset = 'utf-8';
+            document.head.appendChild(s);
+        } else if (features[i] == 'n') {
+            nd_enabled = true;
+        } else if (features[i] == 'g') {
+            {
+                const gecHost = 'epsf.ticketmaster.com';
+                (async()=>{
+                    function e(c, o) {
+                        return new Promise((t,e)=>{
+                            let a = !0
+                              , n = async()=>{
+                                var e = await c();
+                                if (e)
+                                    return t(e);
+                                a && setTimeout(n, 100)
+                            }
+                            ;
+                            n(),
+                            o && setTimeout(()=>{
+                                a = !1,
+                                t()
+                            }
+                            , o)
+                        }
+                        )
+                    }
+                    let n = '6LdWxZEkAAAAAIHtgtxW_lIfRHlcLWzZMMiwx9E1';
+                    var t, a, c = document.createElement('style'), c = (c.innerHTML = '.grecaptcha-badge { visibility: hidden; }',
+                    document.head.appendChild(c),
+                    document.createElement('script')), o = {
+                        '.*tmtickets.*': 'sports'
+                    };
+                    let i = 'default';
+                    for (t in o)
+                        a = document.URL,
+                        new RegExp(t).test(a) && (i = o[t]);
+                    c.src = 'https://www.google.com/recaptcha/enterprise.js?render=' + n,
+                    c.defer = !0,
+                    c.onload = async()=>{
+                        let a = '';
+                        'sports' === i ? (a = window.dataLayer[0].ClientIdentifier,
+                        a += '_' + window.dataLayer[0].PageType.toLowerCase()) : a = await e(()=>window.digitalData?.page?.pageInfo?.pageName, 5e3),
+                        a = a || document.URL.split('/').slice(2, 5).join('/'),
+                        (await e(()=>window.grecaptcha?.enterprise?.ready))(async()=>{
+                            var e = a.replace(/[^A-Z]+/gi, '_')
+                              , t = await grecaptcha.enterprise.execute(n, {
+                                action: e
+                            }).catch(e=>console.error('gec execute failed: ' + e));
+                            t && (e = [window.location.hostname, n, encodeURIComponent(e), encodeURIComponent(t)].join('/'),
+                            t = `https://${gecHost}/gec/v2/` + e + document.location.search,
+                            (new Image).src = t)
+                        }
+                        )
+                    }
+                    ,
+                    document.head.appendChild(c)
+                }
+                )().catch(e=>{
+                    console.error('gec failed: ' + e)
+                }
+                );
+            }
+        } else if (features[i] == 'm') {
+            (async()=>{
+                var e, a, t, n, o;
+                e = window,
+                a = document,
+                t = 'script',
+                n = 'https://www.datadoghq-browser-agent.com/us1/v5/datadog-rum.js',
+                e = e[o = 'DD_RUM'] = e[o] || {
+                    q: [],
+                    onReady: function(a) {
+                        e.q.push(a)
+                    }
+                },
+                (o = a.createElement(t)).async = 1,
+                o.src = 'https://www.datadoghq-browser-agent.com/us1/v5/datadog-rum.js',
+                (n = a.getElementsByTagName(t)[0]).parentNode.insertBefore(o, n);
+                window.DD_RUM.onReady(function() {
+                    window.DD_RUM.init({
+                        clientToken: 'pub83028f47283c30775066b8fc4ee6d05f',
+                        applicationId: '344438d7-5732-4fff-ba1a-78189a1ea812',
+                        site: 'datadoghq.com',
+                        service: (((window.digitalData || {}).page || {}).pageInfo || {}).domain || 'unknown',
+                        env: (((window.digitalData || {}).page || {}).pageInfo || {}).environment || 'prod',
+                        sessionSampleRate: 100,
+                        sessionReplaySampleRate: 0,
+                        trackUserInteractions: !0,
+                        trackResources: !0,
+                        trackLongTasks: !0,
+                        defaultPrivacyLevel: 'mask'
+                    }),
+                    TMAuthAdaptorStandalone && TMAuthAdaptorStandalone.init({
+                        integratorId: 'prd124.abuse-prevention',
+                        placementId: 'datadog'
+                    }).getUser(!1).then(a=>{
+                        window.DD_RUM.setUser({
+                            id: a.hmacUserId,
+                            name: a.firstName + ' ' + a.lastName,
+                            email: a.emailAddress
+                        })
+                    }
+                    )
+                })
+            }
+            )().catch(a=>{
+                console.error('datadog failed: ' + a)
+            }
+            );
+        } else if (features[i] == 'p') {
+            var eps_dg = 'p';
+            var pp = document.createElement('script');
+            pp.src = 'https://epsf.ticketmaster.com/eps-p';
+            pp.charset = 'utf-8';
+            document.head.appendChild(pp);
+        } else if (features[i] == 'i') {
+            i_sdk = document.createElement('script');
+            i_sdk.src = 'https://www.ipqscdn.com/api/ticketmaster.co.uk/FO7QZkCuyNhsd5pyrXGwbD1Pjo2nXPVR32tvxupSSKShG8NxLoZ7MR7vW01glZRWm4hN7fj1D1Rmp5S4V8sOpINsxOiQVcKlf5zBZUlJ106qq8PXg9lzu3DamqPsIacBRFbYxxCuXbOeSJZbJMn7f0o8iFC96hP1rXufJGwZdulqMVe8OsPZ54MgWz7VllPTPcFToQ8xHA4ivIo2gmrnUQ3pUm6WEkLwToo9T0axKQxqlIf7EesIBLM75G8hEfxd/learn.js';
+            i_sdk.charset = 'utf-8';
+            document.head.appendChild(i_sdk);
+        }
+        ;
+    }
+} else {
+    var eps_dg = 'd';
+    s = document.createElement('script');
+    s.src = 'https://epsf.ticketmaster.com/eps-d';
+    s.charset = 'utf-8';
+    document.head.appendChild(s);
+}
+;if (nd_enabled) {
+    var epsSID = '523b198b89ce5a28c5edf2fe284ed5f24fe5acab';
+    var ns = document.createElement('script');
+    ns.src = 'https://epsf.ticketmaster.com/asset/nd.js';
+    ns.charset = 'utf-8';
+    document.head.appendChild(ns);
+}
