@@ -1,9 +1,10 @@
-### The steps to de-obfuscate eps-p:
-1. Paste `eps-p` into `https://obf-io.deobfuscate.io/`.
-2. Looking at the code, we see that the call to function `R` needs to be replaced. It looks like computing the string.
-3. I also found a lot of similar operations: `gl`, `Ef`, `Fs`, `Qf`, `Xh`, `Ri`, `Ey`, `cp`, `$h`, `mh` function, etc.
-4. Put some special treatment on the function `c`.
-5. Execute this code in https://astexplorer.net/ using `@baber/parser` + `babelv7` transform.
+### The steps to de-obfuscate init_8.9.6:
+1. Paste `init_8.9.6` of the source into `https://obf-io.deobfuscate.io/`.
+2. You may get a code like `0++`, it's okay, you can just change it to `r++`.
+3. Looking at the code, we see that the call to function `R` needs to be replaced. It looks like computing the string.
+4. I also found a lot of similar operations: `gl`, `Ef`, `Fs`, `Qf`, `Xh`, `Ri`, `Ey`, `cp`, `$h`, `mh` function, etc.
+5. Put some special treatment on the function `c`.
+6. Execute this code in https://astexplorer.net/ using `@baber/parser` + `babelv7` transform.
 
 
 ```javascript

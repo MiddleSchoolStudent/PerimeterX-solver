@@ -1,5 +1,5 @@
-### The steps to de-obfuscate eps-p:
-1. Paste `init.js` into `https://obf-io.deobfuscate.io/`.
+### The steps to de-obfuscate init_9.0.8:
+1. Paste `init_9.0.8.js` of the source into `https://obf-io.deobfuscate.io/`.
 2. You may get a code like `0++`, it's okay, you can just change it to `r++`.
 3. Looking at the code, we see that the call to function `X` needs to be replaced. It looks like computing the string.
 4. Searching for `= ["`, I found many such similar string definitions in the code and similar operations: `Dc`, `rf`, `gf`, `jf`, `Zl`, `dh`, `bh`, `fd`, `Fp`, `kg`  function, etc.
