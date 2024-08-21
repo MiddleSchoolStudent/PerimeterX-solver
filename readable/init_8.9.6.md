@@ -1443,7 +1443,7 @@ export default function (babel) {
 
   const calls = { gl, Ef, Fs, Qf, Xh, Ri, Ey, cp, $h, mh };
 
-  function applyRTransform(path) {
+  function apply_R_Transform(path) {
     if (
       t.isIdentifier(path.node.callee, { name: "R" }) &&
       path.node.arguments.length === 1 &&
@@ -1454,54 +1454,50 @@ export default function (babel) {
     }
   }
 
+  function apply_c_Transform(path) {
+    if (
+      t.isIdentifier(path.node.callee, { name: "c" }) &&
+      path.node.arguments.length === 1 &&
+      t.isStringLiteral(path.node.arguments[0])
+    ) {
+      try {
+        const rValue = c(path.node.arguments[0].value);
+        path.replaceWith(t.stringLiteral(rValue));
+      } catch (err) {}
+    }
+  }
+
   return {
     name: "ast-transform", // not required
     visitor: {
-      CallExpression(path) {
-        if (
-          t.isIdentifier(path.node.callee, { name: "R" }) &&
-          path.node.arguments.length === 1 &&
-          t.isStringLiteral(path.node.arguments[0])
-        ) {
-          try {
-            const rValue = R(path.node.arguments[0].value);
-            path.replaceWith(t.stringLiteral(rValue));
-          } catch (err) {}
-        }
+      Program(path) {
+        path.traverse({
+          CallExpression(path) {
+            apply_R_Transform(path);
+            apply_c_Transform(path);
 
-        if (
-          t.isIdentifier(path.node.callee, { name: "c" }) &&
-          path.node.arguments.length === 1 &&
-          t.isStringLiteral(path.node.arguments[0])
-        ) {
-          try {
-            const rValue = c(path.node.arguments[0].value);
-            path.replaceWith(t.stringLiteral(rValue));
-          } catch (err) {}
-        }
+            if (
+              t.isIdentifier(path.node.callee) &&
+              path.node.callee.name in calls &&
+              path.node.arguments.length === 1 &&
+              t.isNumericLiteral(path.node.arguments[0])
+            ) {
+              const rValue = calls[path.node.callee.name](
+                path.node.arguments[0].value
+              );
+              try {
+                path.replaceWith(t.stringLiteral(rValue));
+              } catch (err) {}
+            }
+          },
+        });
 
-        if (
-          t.isIdentifier(path.node.callee) &&
-          path.node.callee.name in calls &&
-          path.node.arguments.length === 1 &&
-          t.isNumericLiteral(path.node.arguments[0])
-        ) {
-          const rValue = calls[path.node.callee.name](
-            path.node.arguments[0].value
-          );
-          try {
-            path.replaceWith(t.stringLiteral(rValue));
-          } catch (err) {}
-        }
-      },
-      Program: {
-        exit(path) {
-          path.traverse({
-            CallExpression(path) {
-              applyRTransform(path);
-            },
-          });
-        },
+        path.traverse({
+          CallExpression(path) {
+            apply_R_Transform(path);
+            apply_c_Transform(path);
+          },
+        });
       },
     },
   };
