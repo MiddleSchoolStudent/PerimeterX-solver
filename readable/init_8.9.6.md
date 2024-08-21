@@ -6,10 +6,12 @@
 5. Specifically, I noticed that the code contains something like `+ parseInt`, this is a special treatment of the order of the array of strings. We have to adjust the strings in `Ri`, `Ef`, `gl`, `cp`, `Qf`, `Fs`, `mh`, `Xh`, `Ey`, `$h` accordingly.
 6. Put some special treatment on the function `c`.
 7. Execute this code in https://astexplorer.net/ using `@baber/parser` + `babelv7` transform.
-8. Paste the result to `https://obf-io.deobfuscate.io/` again.
+8. Paste the code into “https://deobfuscate.io/” and let it help us optimize the code structure.
 
 
 ```javascript
+// @ts-check
+
 export default function (babel) {
   const { types: t } = babel;
   var E = (function () {
@@ -1441,6 +1443,17 @@ export default function (babel) {
 
   const calls = { gl, Ef, Fs, Qf, Xh, Ri, Ey, cp, $h, mh };
 
+  function applyRTransform(path) {
+    if (
+      t.isIdentifier(path.node.callee, { name: "R" }) &&
+      path.node.arguments.length === 1 &&
+      t.isStringLiteral(path.node.arguments[0])
+    ) {
+      const rValue = R(path.node.arguments[0].value);
+      path.replaceWith(t.stringLiteral(rValue));
+    }
+  }
+
   return {
     name: "ast-transform", // not required
     visitor: {
@@ -1480,6 +1493,15 @@ export default function (babel) {
             path.replaceWith(t.stringLiteral(rValue));
           } catch (err) {}
         }
+      },
+      Program: {
+        exit(path) {
+          path.traverse({
+            CallExpression(path) {
+              applyRTransform(path);
+            },
+          });
+        },
       },
     },
   };
