@@ -6,7 +6,7 @@
 5. Specifically, I noticed that the code contains something like `+ parseInt`, this is a special treatment of the order of the array of strings. We have to adjust the strings in `Ri`, `Ef`, `gl`, `cp`, `Qf`, `Fs`, `mh`, `Xh`, `Ey`, `$h` accordingly.
 6. Put some special treatment on the function `c`.
 7. Execute this code in https://astexplorer.net/ using `@baber/parser` + `babelv7` transform.
-8. Paste the code into “https://deobfuscate.io/” and let it help us optimize the code structure.
+8. Paste the code into https://obf-io.deobfuscate.io/ (uncheck "Simplify Objects") and let it help us optimize the code structure.
 
 
 ```javascript
