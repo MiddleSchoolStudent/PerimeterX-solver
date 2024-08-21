@@ -5,11 +5,13 @@
 4. Searching for `= ["`, I found many such similar string definitions in the code and similar operations: `Dc`, `rf`, `gf`, `jf`, `Zl`, `dh`, `bh`, `fd`, `Fp`, `kg`  function, etc.
 5. Put some special treatment on the function `c`.
 6. Execute this code in https://astexplorer.net/ using `@baber/parser` + `babelv7` transform.
-7. Paste the result to `https://obf-io.deobfuscate.io/` again.
+7. Paste the code into “https://deobfuscate.io/” and let it help us optimize the code structure.
 8. TODO: Maybe in the future we can use `babel/parser` to write automated de-obfuscation programs to deal with this shit upgrade.
 
 
 ```javascript
+// @ts-check
+
 export default function (babel) {
   const { types: t } = babel;
   var x = (function () {
@@ -1439,6 +1441,17 @@ export default function (babel) {
 
   const calls = { Dc, rf, gf, jf, Zl, dh, bh, fd, Fp, kg };
 
+  function applyXTransform(path) {
+    if (
+      t.isIdentifier(path.node.callee, { name: "X" }) &&
+      path.node.arguments.length === 1 &&
+      t.isStringLiteral(path.node.arguments[0])
+    ) {
+      const rValue = X(path.node.arguments[0].value);
+      path.replaceWith(t.stringLiteral(rValue));
+    }
+  }
+
   return {
     name: "ast-transform", // not required
     visitor: {
@@ -1472,6 +1485,15 @@ export default function (babel) {
           );
           path.replaceWith(t.stringLiteral(rValue));
         }
+      },
+      Program: {
+        exit(path) {
+          path.traverse({
+            CallExpression(path) {
+              applyXTransform(path);
+            },
+          });
+        },
       },
     },
   };
