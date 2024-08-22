@@ -5,7 +5,7 @@
 4. Searching for `= ["`, I found many such similar string definitions in the code and similar operations: `Dc`, `rf`, `gf`, `jf`, `Zl`, `dh`, `bh`, `fd`, `Fp`, `kg`  function, etc.
 5. Put some special treatment on the function `c`.
 6. Execute this code in https://astexplorer.net/ using `@baber/parser` + `babelv7` transform.
-7. Paste the code into “https://deobfuscate.io/” and let it help us optimize the code structure.
+8. Paste the code into https://obf-io.deobfuscate.io/ (uncheck "Simplify Objects") and let it help us optimize the code structure.
 8. TODO: Maybe in the future we can use `babel/parser` to write automated de-obfuscation programs to deal with this shit upgrade.
 
 
@@ -1441,7 +1441,7 @@ export default function (babel) {
 
   const calls = { Dc, rf, gf, jf, Zl, dh, bh, fd, Fp, kg };
 
-  function applyXTransform(path) {
+  function apply_X_Transform(path) {
     if (
       t.isIdentifier(path.node.callee, { name: "X" }) &&
       path.node.arguments.length === 1 &&
@@ -1452,48 +1452,57 @@ export default function (babel) {
     }
   }
 
+  function apply_c_Transform(path) {
+    if (
+      t.isIdentifier(path.node.callee, { name: "c" }) &&
+      path.node.arguments.length === 1 &&
+      t.isStringLiteral(path.node.arguments[0])
+    ) {
+      const rValue = c(path.node.arguments[0].value);
+      path.replaceWith(t.stringLiteral(rValue));
+    }
+  }
+
   return {
     name: "ast-transform", // not required
     visitor: {
-      CallExpression(path) {
-        if (
-          t.isIdentifier(path.node.callee, { name: "X" }) &&
-          path.node.arguments.length === 1 &&
-          t.isStringLiteral(path.node.arguments[0])
-        ) {
-          const rValue = X(path.node.arguments[0].value);
-          path.replaceWith(t.stringLiteral(rValue));
-        }
+      Program(path) {
+        path.traverse({
+          CallExpression(path) {
+            apply_X_Transform(path);
+            apply_c_Transform(path);
 
-        if (
-          t.isIdentifier(path.node.callee, { name: "c" }) &&
-          path.node.arguments.length === 1 &&
-          t.isStringLiteral(path.node.arguments[0])
-        ) {
-          const rValue = c(path.node.arguments[0].value);
-          path.replaceWith(t.stringLiteral(rValue));
-        }
+            if (
+              t.isIdentifier(path.node.callee) &&
+              path.node.callee.name in calls &&
+              path.node.arguments.length === 1 &&
+              t.isNumericLiteral(path.node.arguments[0])
+            ) {
+              const rValue = calls[path.node.callee.name](
+                path.node.arguments[0].value
+              );
+              path.replaceWith(t.stringLiteral(rValue));
+            }
+          },
+        });
 
-        if (
-          t.isIdentifier(path.node.callee) &&
-          path.node.callee.name in calls &&
-          path.node.arguments.length === 1 &&
-          t.isNumericLiteral(path.node.arguments[0])
-        ) {
-          const rValue = calls[path.node.callee.name](
-            path.node.arguments[0].value
-          );
-          path.replaceWith(t.stringLiteral(rValue));
-        }
-      },
-      Program: {
-        exit(path) {
-          path.traverse({
-            CallExpression(path) {
-              applyXTransform(path);
-            },
-          });
-        },
+        // Replace the remaining calls to the functions of X and c with the following
+        path.traverse({
+          CallExpression(path) {
+            apply_X_Transform(path);
+            apply_c_Transform(path);
+          },
+        });
+
+        // Remove these codes, which can send execution into a dead loop
+        path.traverse({
+          ExpressionStatement(path) {
+            const code = path.getSource();
+            if (code.split("\n").length > 13) return;
+            const regex = /!?\s*function\s*\(\s*\w+\s*,\s*\w+\s*\)\s*{\s*for\s*\(.*\)\s*{\s*try\s*{\s*.*parseInt.*\s*\.push\(.*\.shift\(\)\);\s*} catch/s;
+            if (regex.test(code)) path.remove();
+          },
+        });
       },
     },
   };
