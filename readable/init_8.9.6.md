@@ -10,8 +10,6 @@
 
 
 ```javascript
-// @ts-check
-
 export default function (babel) {
   const { types: t } = babel;
   var E = (function () {
@@ -1492,12 +1490,23 @@ export default function (babel) {
           },
         });
 
+        // Replace the remaining calls to the functions of R and c with the following
         path.traverse({
           CallExpression(path) {
             apply_R_Transform(path);
             apply_c_Transform(path);
           },
         });
+
+        // Remove these codes, which can send execution into a dead loop
+        path.traverse({
+          ExpressionStatement(path) {
+            const code = path.getSource();
+            if (code.split("\n").length > 13) return;
+            const regex = /!?\s*function\s*\(\s*\w+\s*,\s*\w+\s*\)\s*{\s*for\s*\(.*\)\s*{\s*try\s*{\s*.*parseInt.*\s*\.push\(.*\.shift\(\)\);\s*} catch/s;
+            if (regex.test(code)) path.remove();
+          },
+        })
       },
     },
   };
