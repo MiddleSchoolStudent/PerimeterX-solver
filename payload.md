@@ -1156,6 +1156,7 @@ u(n, "PX11679", document.body && document.body.offsetWidth + "x" + document.body
 
 ### PX11681
 ```javascript
+t.PX11681 = navigator.languages;
 ```
 
 ### PX11685
@@ -1246,22 +1247,63 @@ u(n = {}, "PX11719", true);
 
 ### PX11745
 ```javascript
+case function () {
+    var t = window._pxAction;
+    return t === "pxhc" || "pxc" === t;
+}():
+    t = "PX11745";
+    break;
 ```
 
 ### PX11747
 ```javascript
+u(n, "PX11747", Ou.length > 0 ? Ou : undefined);
 ```
 
 ### PX11754
 ```javascript
+t.PX11754 = navigator.userAgent;
 ```
 
 ### PX11771
 ```javascript
+var th = "".concat(yt(), "//").concat(qs, ".").concat("px-client.net").concat("/b/g");
+var eh = false;
+function nh(t) {
+    if (!eh && window._pxAction && 0 === location.protocol.indexOf("http")) {
+    try {
+        var n = zs([{
+        t: "PX11940",
+        d: {}
+        }], t).join("&");
+        var r = "".concat(th, "?").concat(n);
+        var a = new XMLHttpRequest();
+        a.onreadystatechange = function () {
+        if (4 === a.readyState && 0 === a.status) {
+            lf("PX11796", u({}, "PX11771", th));
+        }
+        };
+        a.open("get", r);
+        a.send();
+        eh = true;
+    } catch (t) {}
+    }
+}
 ```
 
 ### PX11781
 ```javascript
+var N = screen && screen.width || -1;
+var C = screen && screen.height || -1;
+var V = screen && screen.availWidth || -1;
+var _ = screen && screen.availHeight || -1;
+t.PX11843 = N;
+t.PX11781 = C;
+t.PX12121 = V;
+t.PX12128 = _;
+t.PX12387 = N + "X" + C;
+t.PX12003 = screen && +screen.pixelDepth || 0;
+t.PX11380 = screen && +screen.colorDepth || 0;
 ```
 
 ### PX11782
