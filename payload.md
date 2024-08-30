@@ -1072,26 +1072,86 @@ function Ed(t) {
 
 ### PX11659
 ```javascript
+oo1o1o: function (t, e, n) {
+    var i = {};
+    try {
+        i.PX11762 = t;
+        i.PX12076 = e;
+        i.PX11953 = eval(n);
+    } catch (t) {
+        i.PX12056 = t + "";
+    }
+    lf("PX11659", i);
+}
 ```
 
 ### PX11663
 ```javascript
+return Tl(document.documentElement.dispatchEvent);
 ```
 
 ### PX11673
 ```javascript
+if (a) {
+    var o = function (t) {
+    var e;
+    var r = Kn();
+    var a = Ct(r);
+    if (a.length > 0) {
+        var o;
+        var i = a[a.length - 1];
+        u(o = {}, "PX11984", r);
+        u(o, "PX11652", t);
+        u(o, "PX12240", i[1] || "");
+        u(o, "PX11944", i[0] || "");
+        e = o;
+    } else {
+        var f;
+        u(f = {}, "PX11984", r);
+        u(f, "PX11652", t);
+        e = f;
+    }
+    return e;
+    }(a);
+    var i = Xo(n);
+    if (f(i) !== "undefined") {
+    o.PX12461 = i;
+    }
+    lf("PX11673", o);
+    if (5 <= ++ny) {
+    ay = false;
+    iy(false);
+    }
+}
 ```
 
 ### PX11676
 ```javascript
+_c(document, "querySelectorAll", "PX11676");
 ```
 
 ### PX11678
 ```javascript
+t.PX11678 = function () {
+    if (window.PointerEvent && "maxTouchPoints" in navigator) {
+    if (navigator.maxTouchPoints > 0) {
+        return true;
+    }
+    } else {
+    if (window.matchMedia && window.matchMedia("(any-hover: none), (any-pointer: coarse)").matches) {
+        return true;
+    }
+    if (window.TouchEvent || "ontouchstart" in window) {
+        return true;
+    }
+    }
+    return false;
+}();
 ```
 
 ### PX11679
 ```javascript
+u(n, "PX11679", document.body && document.body.offsetWidth + "x" + document.body.offsetHeight || "");
 ```
 
 ### PX11681
@@ -1100,22 +1160,88 @@ function Ed(t) {
 
 ### PX11685
 ```javascript
+t.PX11681 = navigator.languages;
 ```
 
 ### PX11698
 ```javascript
+(function (t, e) {
+    if (t.type === "mousemove" && f(t.movementX) === "number" && f(t.movementY) === "number") {
+    if (Nu.length < 10) {
+        Nu.push(+t.movementX.toFixed(2) + "," + +t.movementY.toFixed(2) + "," + ((e || +new Date()) - (Ao || 0)));
+    }
+    if (Vu.length < 50) {
+        Vu.push(Wu(t));
+    }
+    } else if (t.type === "touchmove") {
+    var n = $u(t);
+    if (n && f(n.screenX) === "number" && f(n.screenY) === "number") {
+        if (Cu.length < 10) {
+        var r = f(Eu.previousTouchmove.screenX) === "number" ? n.screenX - Eu.previousTouchmove.screenX : 0;
+        var a = f(Eu.previousTouchmove.screenY) === "number" ? n.screenY - Eu.previousTouchmove.screenY : 0;
+        Eu.previousTouchmove.screenX = n.screenX;
+        Eu.previousTouchmove.screenY = n.screenY;
+        Cu.push(+r.toFixed(2) + "," + +a.toFixed(2) + "," + ((e || +new Date()) - (Ao || 0)));
+        }
+        if (_u.length < 50) {
+        _u.push(Wu(t));
+        }
+    }
+    }
+})(t, n);
+
+function _t(t) {
+    var e = [];
+    for (var n = 0; n < t.length; n += 2) {
+    e.push(t[n]);
+    }
+    return e;
+}
+
+u(n, "PX11698", Vu.length > 0 ? _t(Vu) : undefined);
 ```
 
 ### PX11699
 ```javascript
+u(a, "PX11699", t[r].PX11699 - t[r - 1].PX11699);
 ```
 
 ### PX11702
 ```javascript
+var a = function (t) {
+    var e;
+    var r = Kn();
+    var a = Ct(r);
+    if (a.length > 0) {
+    var o;
+    var i = a[a.length - 1];
+    u(o = {}, "PX11984", r);
+    u(o, "PX11652", t);
+    u(o, "PX12240", i[1] || "");
+    u(o, "PX11944", i[0] || "");
+    e = o;
+    } else {
+    var f;
+    u(f = {}, "PX11984", r);
+    u(f, "PX11652", t);
+    e = f;
+    }
+    return e;
+}(r);
+var o = Xo(n);
+if (f(o) !== "undefined") {
+    a.PX12461 = o;
+}
+lf("PX11702", a);
+if (5 <= ++jd) {
+    zd = false;
+    qd(false);
+}
 ```
 
 ### PX11719
 ```javascript
+u(n = {}, "PX11719", true);
 ```
 
 ### PX11745
