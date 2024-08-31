@@ -1308,34 +1308,274 @@ t.PX11380 = screen && +screen.colorDepth || 0;
 
 ### PX11782
 ```javascript
+rf.subscribe("PX11782", Gy[Pe]);
 ```
 
 ### PX11796
 ```javascript
+lf("PX11796", u({}, "PX11771", th));
 ```
 
 ### PX11802
 ```javascript
+try {
+var a;
+u(a = {}, "PX12151", e);
+u(a, "PX11921", Zo(this, true));
+Oc("PX11802", a);
+} catch (t) {}
+if (f(n.set) === "function") {
+return n.set.call(this, t);
+}
 ```
 
 ### PX11803
 ```javascript
+function xc() {
+    var t;
+    if (null !== Ac && kc.length < 40) {
+    if ((t = "-" === Ac[fn][0] || "-" === Ac[sn][0] ? "0" : Ac[hn] + " " + Ac[ln]) !== kc[kc.length - 1]) {
+        kc.push(t);
+        Tc.push(bo(Uc));
+    }
+    }
+    Ac = null;
+}
+
+u(e, "PX11803", kc);
 ```
 
 ### PX11805
 ```javascript
+try {
+    if (!navigator.permissions) {
+    return void (Kr = "PX11606");
+    }
+    if ("denied" === Notification.permission) {
+    navigator.permissions.query({
+        name: "notifications"
+    }).then(function (e) {
+        if ("prompt" === e.state) {
+        Kr = "PX11805";
+        }
+    });
+    }
+} catch (t) {}
 ```
 
 ### PX11807
 ```javascript
+var my = function () {
+    var t = arguments.length > 0 && undefined !== arguments[0] ? arguments[0] : {};
+    var e = t.regexList;
+    var n = t.urlContainsList;
+    var r = t.entriesFilter;
+    var a = undefined === r ? function () {
+    return true;
+    } : r;
+    if (!(f(or(window, "performance.getEntries", null)) === "function")) {
+    return [];
+    }
+    var o = window.performance.getEntries().filter(a);
+    var c = [];
+    for (var i = 0; i < o.length; i++) {
+    var u = o[i];
+    if (e) {
+        for (var s = 0; s < e.length; s++) {
+        var h = e[s];
+        if ("string" == typeof h) {
+            h = new RegExp(e[s]);
+        }
+        if (h && f(h.test) === "function" && h.test(u.name)) {
+            c.push(u);
+        }
+        }
+    } else if (n) {
+        for (var l = 0; l < n.length; l++) {
+        var d = n[l];
+        if (-1 !== u.name.indexOf(d)) {
+            c.push(u);
+        }
+        }
+    }
+    }
+    return c;
+};
+
+if (n) {
+    mv("PX11807", n.duration);
+}
 ```
 
 ### PX11811
 ```javascript
+u(t, "PX11811", []);
+
+function lh(t, e) {
+    var n = document.createElement("canvas");
+    n.width = t || 2e3;
+    n.height = e || 200;
+    n.style.display = "inline";
+    return n;
+}
+
+var a = lh();
+if (!a) {
+    r.PX11811.push("PX12423");
+    return e(r);
+}
+
+var o = a.getContext("webgl") || a.getContext("experimental-webgl");
+if (!o) {
+    r.PX11811.push("PX11982");
+    return e(r);
+}
+
+function fh(t, e, n) {
+    var r;
+    var a;
+    var o;
+    var i;
+    var u = function (e) {
+    t.clearColor(0, 0, 0, 1);
+    t.enable(t.DEPTH_TEST);
+    t.depthFunc(t.LEQUAL);
+    t.clear(t.COLOR_BUFFER_BIT | t.DEPTH_BUFFER_BIT);
+    return "[" + e[0] + ", " + e[1] + "]";
+    };
+    return function () {
+    return new lo(function (c) {
+        setTimeout(function () {
+        try {
+            r = t.createBuffer();
+            t.bindBuffer(t.ARRAY_BUFFER, r);
+            var u = new Float32Array([-.2, -.9, 0, .4, -.26, 0, 0, .732134444, 0]);
+            t.bufferData(t.ARRAY_BUFFER, u, t.STATIC_DRAW);
+            r.itemSize = 3;
+            r.numItems = 3;
+            a = t.createProgram();
+            o = t.createShader(t.VERTEX_SHADER);
+            t.shaderSource(o, "attribute vec2 attrVertex;varying vec2 varyinTexCoordinate;uniform vec2 uniformOffset;void main(){varyinTexCoordinate=attrVertex+uniformOffset;gl_Position=vec4(attrVertex,0,1);}");
+            t.compileShader(o);
+            i = t.createShader(t.FRAGMENT_SHADER);
+            t.shaderSource(i, "precision mediump float;varying vec2 varyinTexCoordinate;void main() {gl_FragColor=vec4(varyinTexCoordinate,0,1);}");
+            t.compileShader(i);
+            t.attachShader(a, o);
+            t.attachShader(a, i);
+            t.linkProgram(a);
+            t.useProgram(a);
+            a.vertexPosAttrib = t.getAttribLocation(a, "attrVertex");
+            a.offsetUniform = t.getUniformLocation(a, "uniformOffset");
+            t.enableVertexAttribArray(a.vertexPosArray);
+            t.vertexAttribPointer(a.vertexPosAttrib, r.itemSize, t.FLOAT, false, 0, 0);
+            t.uniform2f(a.offsetUniform, 1, 1);
+            t.drawArrays(t.TRIANGLE_STRIP, 0, r.numItems);
+            e.canvasfp = null === t.canvas ? "no_fp" : undefined ? undefined ? At(undefined, t.canvas.toDataURL()) : Et(At(undefined, t.canvas.toDataURL())) : undefined ? Rt(t.canvas.toDataURL()) : Et(Rt(t.canvas.toDataURL()));
+            e.extensions = t.getSupportedExtensions() || ["no_fp"];
+        } catch (t) {
+            e.errors.push("PX11982");
+        }
+        c();
+        }, 1);
+    });
+    }().then(function () {
+    return function () {
+        return new lo(function (r) {
+        setTimeout(function () {
+            try {
+            e.webglRenderer = uh(t, t.RENDERER);
+            e.shadingLangulageVersion = uh(t, t.SHADING_LANGUAGE_VERSION);
+            e.webglVendor = uh(t, t.VENDOR);
+            e.webGLVersion = uh(t, t.VERSION);
+            var a = t.getExtension("WEBGL_debug_renderer_info");
+            if (a) {
+                e.unmaskedVendor = uh(t, a.UNMASKED_VENDOR_WEBGL);
+                e.unmaskedRenderer = uh(t, a.UNMASKED_RENDERER_WEBGL);
+            }
+            e.webglParameters = [];
+            var o = e.webglParameters;
+            o.push(u(uh(t, t.ALIASED_LINE_WIDTH_RANGE)));
+            o.push(u(uh(t, t.ALIASED_POINT_SIZE_RANGE)));
+            o.push(uh(t, t.ALPHA_BITS));
+            o.push(t.getContextAttributes().antialias ? "yes" : "no");
+            o.push(uh(t, t.BLUE_BITS));
+            o.push(uh(t, t.DEPTH_BITS));
+            o.push(uh(t, t.GREEN_BITS));
+            o.push(function (t) {
+                var e;
+                var n = t.getExtension("EXT_texture_filter_anisotropic") || t.getExtension("WEBKIT_EXT_texture_filter_anisotropic") || t.getExtension("MOZ_EXT_texture_filter_anisotropic");
+                return n ? (0 === (e = t.getParameter(n.MAX_TEXTURE_MAX_ANISOTROPY_EXT)) && (e = 2), e) : null;
+            }(t));
+            o.push(uh(t, t.MAX_COMBINED_TEXTURE_IMAGE_UNITS));
+            o.push(uh(t, t.MAX_CUBE_MAP_TEXTURE_SIZE));
+            o.push(uh(t, t.MAX_FRAGMENT_UNIFORM_VECTORS));
+            o.push(uh(t, t.MAX_RENDERBUFFER_SIZE));
+            o.push(uh(t, t.MAX_TEXTURE_IMAGE_UNITS));
+            o.push(uh(t, t.MAX_TEXTURE_SIZE));
+            o.push(uh(t, t.MAX_VARYING_VECTORS));
+            o.push(uh(t, t.MAX_VERTEX_ATTRIBS));
+            o.push(uh(t, t.MAX_VERTEX_TEXTURE_IMAGE_UNITS));
+            o.push(uh(t, t.MAX_VERTEX_UNIFORM_VECTORS));
+            o.push(u(uh(t, t.MAX_VIEWPORT_DIMS)));
+            o.push(uh(t, t.STENCIL_BITS));
+            if (t.getShaderPrecisionFormat) {
+                var c = ["VERTEX_SHADER", "FRAGMENT_SHADER", "VERTEX_SHADER", "FRAGMENT_SHADER"];
+                var i = ["HIGH_FLOAT", "MEDIUM_FLOAT", "LOW_FLOAT"];
+                for (var f = 0; f < c.length; f++) {
+                var s = c[f];
+                for (var h = 0; h < i.length; h++) {
+                    var l = i[h];
+                    var d = t.getShaderPrecisionFormat(t[s], t[l]);
+                    o.push(d.precision, d.rangeMin, d.rangeMax);
+                }
+                }
+            }
+            } catch (t) {
+            e.errors.push("PX11982");
+            }
+            r();
+        }, 1);
+        });
+    }();
+    }).then(function () {
+    return n(e);
+    });
+}
+
+fh(o, n, function (n) {
+    r.PX11352 = n.canvasfp;
+    r.PX12292 = n.webglVendor;
+    r.PX11811 = n.errors;
+    r.PX11567 = n.webglRenderer;
+    r.PX12032 = n.webGLVersion;
+    r.PX11536 = n.extensions;
+    r.PX12503 = undefined ? undefined ? At(undefined, n.extensions) : Et(At(undefined, n.extensions)) : undefined ? Rt(n.extensions) : Et(Rt(n.extensions));
+    r.PX12149 = n.webglParameters;
+    r.PX12502 = undefined ? undefined ? At(undefined, n.webglParameters) : Et(At(undefined, n.webglParameters)) : undefined ? Rt(n.webglParameters) : Et(Rt(n.webglParameters));
+    r.PX12352 = n.unmaskedVendor;
+    r.PX11455 = n.unmaskedRenderer;
+    r.PX11534 = n.shadingLangulageVersion;
+    e(r);
+});
 ```
 
 ### PX11813
 ```javascript
+
+function _c(t, e, n) {
+    var r = t[e];
+    if (r) {
+    t[e] = function () {
+        var e = f(Array.from) === "function" ? Array.from(arguments) : Array.prototype.slice.call(arguments);
+        try {
+        Oc(n, u({}, "PX11976", e));
+        } catch (t) {}
+        return r.apply(this, e);
+    };
+    }
+}
+
+_c(document, "getElementsByName", "PX11813");
 ```
 
 ### PX11814
