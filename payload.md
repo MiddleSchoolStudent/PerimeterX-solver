@@ -1580,10 +1580,32 @@ _c(document, "getElementsByName", "PX11813");
 
 ### PX11814
 ```javascript
+try {
+    var r;
+    u(r = {}, "PX12151", e);
+    u(r, "PX11921", Zo(this, true));
+    Oc("PX11814", r);
+} catch (t) {}
 ```
 
 ### PX11819
 ```javascript
+n.PX11892 = function (t) {
+    var n = [];
+    try {
+        if (!t.clipboardData || !t.clipboardData.items) {
+        return null;
+        }
+        for (var r = 0; r < t.clipboardData.items.length; r++) {
+        var a;
+        var o = t.clipboardData.items[r];
+        u(a = {}, "PX11819", o.kind);
+        u(a, "PX11595", o.type);
+        n.push(a);
+        }
+    } catch (t) {}
+    return n;
+}(t);
 ```
 
 ### PX11824
