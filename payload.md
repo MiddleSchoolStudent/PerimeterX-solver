@@ -1610,34 +1610,147 @@ n.PX11892 = function (t) {
 
 ### PX11824
 ```javascript
+function Io(t) {
+    if (t) {
+    return t.target || t.toElement || t.srcElement;
+    }
+}
+
+if (e) {
+    var i = Io(t);
+    if (i) {
+        var f = No(i);
+        n.PX11427 = f.top;
+        n.PX12208 = f.left;
+        n.PX11652 = function (t) {
+        var e = Zo(t, true);
+        return e ? function (t) {
+            if (!Hu[t]) {
+            Hu[t] = Du++;
+            }
+            return Du;
+        }(e) : 0;
+        }(i);
+        n.PX11824 = i.offsetWidth;
+        n.PX11631 = i.offsetHeight;
+        n.PX12165 = function (t) {
+        return "submit" === t.type ? t.type : t.nodeName ? t.nodeName.toLowerCase() : "";
+        }(i);
+    } else {
+        n.PX11652 = 0;
+    }
+}
+
 ```
 
 ### PX11826
-```javascript
-```
+n / a
 
 ### PX11840
 ```javascript
+t.PX11840 = window.Date();
 ```
 
 ### PX11842
 ```javascript
+function dd(t) {
+    var e = [];
+    if (t) {
+    try {
+        var n = Object.getOwnPropertyNames(t);
+        for (var r = 0; r < n.length; r++) {
+        var a = n[r];
+        if (("_" === a[0] || "$" === a[0] || -1 !== lt(od, a)) && a.length <= 200 && (e.push(a), e.length >= 30)) {
+            break;
+        }
+        }
+    } catch (t) {}
+    }
+    return e;
+}
+
+{
+    name: "PX12427",
+    func: function () {
+    return dd(window);
+    }
+}
 ```
 
 ### PX11843
 ```javascript
+function ml(t) {
+    try {
+    var N = screen && screen.width || -1;
+    var C = screen && screen.height || -1;
+    var V = screen && screen.availWidth || -1;
+    var _ = screen && screen.availHeight || -1;
+    t.PX11843 = N;
+    t.PX11781 = C;
+    t.PX12121 = V;
+    t.PX12128 = _;
+    t.PX12387 = N + "X" + C;
+    t.PX12003 = screen && +screen.pixelDepth || 0;
+    t.PX11380 = screen && +screen.colorDepth || 0;
+    } catch (t) {}
+    try {
+    t.PX11494 = window.innerWidth || -1;
+    t.PX12411 = window.innerHeight || -1;
+    t.PX12443 = window.scrollX || window.pageXOffset || 0;
+    t.PX12447 = window.scrollY || window.pageYOffset || 0;
+    t.PX11533 = !(0 === window.outerWidth && 0 === window.outerHeight);
+    t.PX12079 = function () {
+        try {
+        return window.hasOwnProperty("_cordovaNative") || window.hasOwnProperty("Ti") || window.hasOwnProperty("webView") || window.hasOwnProperty("Android") || document.hasOwnProperty("ondeviceready") || navigator.hasOwnProperty("standalone") || window.external && "notify" in window.external || navigator.userAgent.indexOf(" Mobile/") > 0 && -1 === navigator.userAgent.indexOf(" Safari/");
+        } catch (t) {
+        return false;
+        }
+    }();
+    } catch (t) {}
+}
 ```
 
 ### PX11844
 ```javascript
+u(n, "PX11844", bu);
 ```
 
 ### PX11849
 ```javascript
+Lt(t, "PX11849", function () {
+    return Tl(navigator.toString);
+}, "");
 ```
 
 ### PX11859
 ```javascript
+function Yu(t) {
+    if (gu) {
+    var n;
+    gu = false;
+    if (Bu.length > 0 || Nu.length > 0 || Cu.length > 0) {
+        if (du) {
+        u(n = {}, "PX12040", Bu);
+        u(n, "PX12170", t);
+        u(n, "PX11934", yu);
+        u(n, "PX12160", Hu);
+        u(n, "PX11875", Gr());
+        u(n, "PX11844", bu);
+        u(n, "PX12465", Hi);
+        u(n, "PX11393", Nu.join("|"));
+        u(n, "PX12621", Cu.join("|"));
+        u(n, "PX12470", Ao);
+        u(n, "PX11747", Ou.length > 0 ? Ou : undefined);
+        u(n, "PX11698", Vu.length > 0 ? _t(Vu) : undefined);
+        u(n, "PX11433", _u.length > 0 ? _t(_u) : undefined);
+        u(n, "PX11679", document.body && document.body.offsetWidth + "x" + document.body.offsetHeight || "");
+        du("PX12419", n);
+        }
+    }
+    Ju(false);
+    }
+}
+Yu("PX11859");
 ```
 
 ### PX11866
