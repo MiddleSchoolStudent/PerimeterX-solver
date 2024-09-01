@@ -1912,26 +1912,232 @@ function Vc(t, e, n) {
 
 ### PX11921
 ```javascript
+function Sc() {
+    if (ic = document.getElementById("g-recaptcha-response")) {
+    var t = fc.getElementsByTagName("iframe")[0];
+    if (t && /recaptcha/gi.test(t.getAttribute("src") || "")) {
+        uc = t;
+    }
+    return uc && ic;
+    }
+}
+
+function Ic(t, e) {
+    if (f(Object.defineProperty) === "function" && f(Object.getOwnPropertyDescriptor) === "function" && f(Object.getPrototypeOf) === "function") {
+    var n = function (t, e) {
+        for (; null !== t;) {
+        var n = Object.getOwnPropertyDescriptor(t, e);
+        if (n) {
+            return n;
+        }
+        t = Object.getPrototypeOf(t);
+        }
+        return null;
+    }(Object.getPrototypeOf(t), e);
+    if (null === n) {
+        var r = ct({}, n, {
+        get: function () {
+            try {
+            var r;
+            u(r = {}, "PX12151", e);
+            u(r, "PX11921", Zo(this, true));
+            Oc("PX11814", r);
+            } catch (t) {}
+            if (f(n.get) === "function") {
+            return n.get.call(this);
+            }
+        },
+        set: function (t) {
+            try {
+            var a;
+            u(a = {}, "PX12151", e);
+            u(a, "PX11921", Zo(this, true));
+            Oc("PX11802", a);
+            } catch (t) {}
+            if (f(n.set) === "function") {
+            return n.set.call(this, t);
+            }
+        }
+        });
+        Object.defineProperty(t, e, r);
+    }
+    }
+}
 ```
 
 ### PX11925
-```javascript
-```
+n / a
 
 ### PX11927
 ```javascript
+function dh() {
+    return new lo(function (e) {
+    setTimeout(function () {
+        var n = "no_fp";
+        try {
+        var r = lh(650, 12);
+        if (r) {
+            var a = sh(r);
+            n = "PX11982";
+            if (a) {
+            a.font = "8px sans-serif";
+            var o = 1;
+            for (var c = 128512; c < 128591; c++) {
+                a.fillText(fo("0x" + c.toString(16)), 8 * o, 8);
+                o++;
+            }
+            n = undefined ? undefined ? At(undefined, a.canvas.toDataURL()) : Et(At(undefined, a.canvas.toDataURL())) : undefined ? Rt(a.canvas.toDataURL()) : Et(Rt(a.canvas.toDataURL()));
+            }
+        } else {
+            n = "PX12423";
+        }
+        } catch (e) {
+        n = "PX11474";
+        }
+        e(u({}, "PX11927", n));
+    }, 1);
+    });
+}
 ```
 
 ### PX11933
 ```javascript
+function Kn() {
+    try {
+    null[0];
+    } catch (t) {
+    return t.stack || "";
+    }
+}
+
+u(n, "PX11933", !!Kn());
 ```
 
 ### PX11934
 ```javascript
+
+var yu = location && location.href || "";
+u(n, "PX11934", yu);
 ```
 
 ### PX11940
 ```javascript
+function zs(t, e) {
+    var r = Gi();
+    for (var a = 0; a < t.length; a++) {
+    var o = t[a];
+    o.d.PX11379 = ft;
+    if (r) {
+        o.d.PX12307 = r;
+    }
+    o.d.PX12615 = Kf && !!Kf;
+    o.d.PX12620 = Kf;
+    if (Rs) {
+        o.d.PX11375 = Rs;
+    }
+    var i = window._pxAction;
+    if (i) {
+        o.d.PX11668 = i;
+        o.d.PX12348 = window._pxMobile;
+    }
+    }
+    !function (t) {
+    var n = t[0];
+    var r = n && n.d;
+    if (r) {
+        r.PX11645 = yu;
+    }
+    }(t);
+    var u;
+    var f;
+    u = e[Fe];
+    f = e[Xe];
+    var h = function (t, e) {
+    var n = e ? undefined ? At(e, t) : Et(At(e, t)) : undefined ? Rt(t) : Et(Rt(t));
+    try {
+        var r = function (t) {
+        var e = "";
+        var n = "";
+        for (var r = 0; r < t.length; r++) {
+            var a = t.charCodeAt(r);
+            if (a >= 48 && a <= 57) {
+            e += t[r];
+            } else {
+            n += a % 10;
+            }
+        }
+        return e + n;
+        }(n);
+        var a = "";
+        for (var o = 0; o < r.length; o += 2) {
+        a += r[o];
+        }
+        return a;
+    } catch (t) {}
+    }(F(t), [Gr(), u, f].join(":"));
+    var l = {
+    vid: q,
+    tag: e[Fe],
+    appID: e[Me],
+    cu: Gr(),
+    cs: ha,
+    pc: h
+    };
+    var d = Nf(t, l);
+    var y = ["payload=" + d, "appId=" + e[Me], "tag=" + e[Fe], "uuid=" + Gr(), "ft=" + e[Xe], "seq=" + Js++, "en=NTA"];
+    var v = Lr;
+    if (v) {
+    y.push("xuuid=" + v);
+    }
+    if (ha) {
+    y.push("cs=" + ha);
+    }
+    if (h) {
+    y.push("pc=" + h);
+    }
+    var p = e[Le]();
+    var m = js(va);
+    if (p || m) {
+    y.push("sid=" + (p || Gr()) + m);
+    }
+    var g = e[We]();
+    if (g.length >= 0) {
+    y.push.apply(y, g);
+    }
+    if (q) {
+    y.push("vid=" + q);
+    }
+    if (_a) {
+    y.push("jsc=" + _a);
+    }
+    var B = Qi;
+    if (B) {
+    y.push("ci=" + B);
+    }
+    if (!(Kf && !!Kf)) {
+    if (!wa) {
+        wa = ar("_pxhd");
+    }
+    if (wa) {
+        y.push("pxhd=" + wa);
+    }
+    }
+    if (qr) {
+    y.push("cts=" + qr);
+    }
+    if (!ka) {
+    ka = ar("_pxac");
+    }
+    if (ka) {
+    y.push("pxac=" + ka);
+    }
+    return y;
+}
+
+var n = zs([{
+    t: "PX11940",
+    d: {}
+}], t).join("&");
 ```
 
 ### PX11944
