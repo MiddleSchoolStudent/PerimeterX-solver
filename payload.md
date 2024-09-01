@@ -1804,35 +1804,110 @@ Lt(t, "PX11883", function () {
         t.PX11371 = n ? undefined ? At(n, o) : Et(At(n, o)) : undefined ? Rt(o) : Et(Rt(o));
     }
     lf("PX11891", t);
-    })();
+})();
 ```
 
 ### PX11897
 ```javascript
+Lt(t, "PX11897", function () {
+    var e = st["Object.getOwnPropertyDescriptor"].call(this, Object.getPrototypeOf(navigator), "webdriver");
+    if (e) {
+        return It("" + (e.get || "") + (e.value || ""));
+    }
+}, "");
 ```
 
 ### PX11898
 ```javascript
+if (Wv.getItem("PX11898", false)) {
+    Wv.removeItem("PX11898", false);
+    t.PX11898 = true;
+}
 ```
 
 ### PX11900
 ```javascript
+function Tf(t, e, n, r) {
+    Uf();
+    if ((mf = 800 * r || 12e4) < 12e4) {
+    mf = 12e4;
+    } else if (mf > 9e5) {
+    mf = 9e5;
+    }
+    if (Di) {
+    Af();
+    }
+}
+
+u(t, "PX11900", mf);
 ```
 
 ### PX11909
 ```javascript
+t("", Li, zi);
+u(s, "PX11909", t);
 ```
 
 ### PX11910
 ```javascript
+var Jc = ["__driver_evaluate", "__webdriver_evaluate", "__selenium_evaluate", "__fxdriver_evaluate", "__driver_unwrapped", "__webdriver_unwrapped", "__selenium_unwrapped", "__fxdriver_unwrapped", "_Selenium_IDE_Recorder", "_selenium", "calledSelenium", "$cdc_asdjflasutopfhvcZLmcfl_", "$chrome_asyncScriptInfo", "__$webdriverAsyncExecutor", "webdriver", "__webdriverFunc", "domAutomation", "domAutomationController", "__lastWatirAlert", "__lastWatirConfirm", "__lastWatirPrompt", "__webdriver_script_fn", "_WEBDRIVER_ELEM_CACHE"];
+
+function ui(t) {
+    var n = vi(document, Jc);
+    if (-1 !== n) {
+    t("PX11910", n);
+    }
+}
 ```
 
 ### PX11913
 ```javascript
+
+function bf(t) {
+    df = t;
+    Af();
+    Va.on("risk", Tf);
+    zo(window, "focus", kf);
+    zo(window, "blur", wf);
+}
+
+function wf() {
+    pf = false;
+}
+function kf() {
+    pf = true;
+}
+
+u(t = {}, "PX11913", pf);
 ```
 
 ### PX11918
 ```javascript
+function Vo(t, e) {
+    if (!(So && !t || f(e) !== "function")) {
+    new So(function (t) {
+        t.forEach(function (t) {
+        if (t && "attributes" === t.type) {
+            var n = t.attributeName;
+            var r = n && t.target && f(t.target.getAttribute) === "function" && Element.prototype.getAttribute.call(t.target, t.attributeName);
+            e(t.target, n, r);
+        }
+        });
+    }).observe(t, {
+        attributes: true
+    });
+    }
+}
+
+function Vc(t, e, n) {
+    var r;
+    if (e) {
+    u(r = {}, "PX11918", e || "");
+    u(r, "PX12242", n || "");
+    u(r, "PX11652", Zo(t, true));
+    lc("PX11344", r);
+    }
+}
 ```
 
 ### PX11921
