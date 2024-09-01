@@ -1754,23 +1754,57 @@ Yu("PX11859");
 ```
 
 ### PX11866
-```javascript
-```
+n / a
 
 ### PX11868
 ```javascript
+var r = +new Date();
+u(e = {}, "PX11589", r);
+u(e, "PX11868", r - Ca);
 ```
 
 ### PX11875
 ```javascript
+function Gr() {
+    return mr || (window._pxAction ? (f(mr = window._pxUuid || Qt("uuid") || pr()) === "string" && 36 !== mr.length && (mr = mr.trim()), window._pxUuid || (t = mr, window._pxUuid = t)) : mr = pr(), mr);
+    var t;
+}
+
+u(n, "PX11875", Gr());
 ```
 
 ### PX11883
 ```javascript
+Lt(t, "PX11883", function () {
+    return Tl(navigator.hasOwnProperty);
+}, "");
 ```
 
 ### PX11891
 ```javascript
+(function () {
+    var t;
+    df[Ce] = 0;
+    Bf += 1;
+    var n = navigator.userAgent;
+    u(t = {}, "PX11913", pf);
+    u(t, "PX11900", mf);
+    u(t, "PX12159", Bf);
+    u(t, "PX11754", n);
+    u(t, "PX12256", Hf);
+    u(t, "PX12445", df[Ve]);
+    if (Gr()) {
+        t.PX11804 = n ? undefined ? At(n, Gr()) : Et(At(n, Gr())) : undefined ? Rt(Gr()) : Et(Rt(Gr()));
+    }
+    if (q) {
+        t.PX11746 = n ? undefined ? At(n, q) : Et(At(n, q)) : undefined ? Rt(q) : Et(Rt(q));
+    }
+    var o = no();
+    if (o) {
+        t.PX11371 = n ? undefined ? At(n, o) : Et(At(n, o)) : undefined ? Rt(o) : Et(Rt(o));
+    }
+    lf("PX11891", t);
+    })();
 ```
 
 ### PX11897
