@@ -2142,90 +2142,317 @@ var n = zs([{
 
 ### PX11944
 ```javascript
+function Kn() {
+    try {
+    null[0];
+    } catch (t) {
+    return t.stack || "";
+    }
+}
+
+function Ct(t) {
+    var e = [];
+    if (!t) {
+    return e;
+    }
+    var n;
+    var r = t.split("\n");
+    var a = null;
+    var u = 0;
+    for (var f = r.length; u < f; ++u) {
+    if (n = /^\s*at (.*?) ?\(?((?:file:\/\/|https?:\/\/|blob|chrome-extension|native|webpack:\/\/|eval|<anonymous>).*?)(?::(\d+))?(?::(\d+))?\)?\s*$/i.exec(r[u])) {
+        a = [n[2] && -1 !== n[2].indexOf("native") ? "" : n[2], n[1] || "?"];
+    } else if (n = /^\s*at (?:((?:\[object object\])?.+) )?\(?((?:ms-appx|https?|webpack|blob):.*?):(\d+)(?::(\d+))?\)?\s*$/i.exec(r[u])) {
+        a = [n[2], n[1] || "?"];
+    } else {
+        if (!(n = /^\s*(.*?)(?:\((.*?)\))?(?:^|@)((?:file|https?|blob|chrome|webpack|\[native).*?)(?::(\d+))?(?::(\d+))?\s*$/i.exec(r[u]))) {
+        continue;
+        }
+        a = [n[3], n[1] || "?"];
+    }
+    e.push(a);
+    }
+    return e;
+}
+
+var o = Kn();
+var i = Ct(o);
+
+if (i.length > 0) {
+    var s = i[i.length - 1];
+    e.PX12240 = s[1] || "";
+    e.PX11944 = s[0] || "";
+}
 ```
 
 ### PX11948
 ```javascript
+{
+    name: "PX11948",
+    func: function () {
+    return window.devicePixelRatio;
+    },
+    defValue: ""
+}
 ```
 
 ### PX11949
 ```javascript
+u(e = {}, "PX11949", wc);
 ```
 
 ### PX11951
 ```javascript
+lf("PX11951", u({}, "PX12228", F(t)));
 ```
 
 ### PX11959
 ```javascript
+function It(t) {
+    t = "" + t;
+    var e = 0;
+    for (var n = 0; n < t.length; n++) {
+    e = (e << 5) - e + t.charCodeAt(n);
+    e |= 0;
+    }
+    return function (t) {
+    if ((t |= 0) < 0) {
+        t += 4294967296;
+    }
+    return t.toString(16);
+    }(e);
+}
+
+function Tl(t) {
+    if (f(t) !== "undefined") {
+    return It(t);
+    }
+}
+
+Lt(t, "PX11959", function () {
+    return Tl(Object.getOwnPropertyDescriptor);
+}, "");
 ```
 
 ### PX11976
 ```javascript
+function (e, n) {
+    if (e && e.length) {
+    var r = [];
+    for (var a = 0; a < e.length; a++) {
+        r.push(Zo(e[a]));
+    }
+    Oc("PX12027", u({}, "PX11976", r), true);
+}
 ```
 
 ### PX11978
 ```javascript
+case window._pxAction === "c":
+    t = "PX11978";
+    break;
 ```
 
 ### PX11982
 ```javascript
+} catch (t) {
+    e.errors.push("PX11982");
+}
 ```
 
 ### PX11984
 ```javascript
+function Kn() {
+    try {
+    null[0];
+    } catch (t) {
+    return t.stack || "";
+    }
+}
+
+function Vt(t) {
+    var e = t.split("\n");
+    return e.length > 20 ? e.slice(e.length - 20, e.length).join("\n") : t;
+}
+
+u(n, "PX11984", Vt(Kn()));
 ```
 
 ### PX11986
 ```javascript
+{
+    name: "PX11986",
+    func: function () {
+    return !!window.localStorage;
+    },
+    defValue: false
+}
 ```
 
 ### PX11987
 ```javascript
+function _o(t) {
+    var e = "undefined";
+    if (t && t.hasOwnProperty("isTrusted")) {
+    e = t.isTrusted && "false" !== t.isTrusted ? "true" : "false";
+    }
+    return e;
+}
+
+u(e, "PX11987", _o(t));
 ```
 
-### PX11993
+### * PX11993
 ```javascript
+{
+    name: "PX11993",
+    func: function () {
+    return va;
+    }
+}
 ```
 
 ### PX11994
 ```javascript
+function Yu(t) {
+    if (gu) {
+    var n;
+    gu = false;
+    if (Bu.length > 0 || Nu.length > 0 || Cu.length > 0) {
+        if (du) {
+        u(n = {}, "PX12040", Bu);
+        u(n, "PX12170", t);
+        u(n, "PX11934", yu);
+        u(n, "PX12160", Hu);
+        u(n, "PX11875", Gr());
+        u(n, "PX11844", bu);
+        u(n, "PX12465", Hi);
+        u(n, "PX11393", Nu.join("|"));
+        u(n, "PX12621", Cu.join("|"));
+        u(n, "PX12470", Ao);
+        u(n, "PX11747", Ou.length > 0 ? Ou : undefined);
+        u(n, "PX11698", Vu.length > 0 ? _t(Vu) : undefined);
+        u(n, "PX11433", _u.length > 0 ? _t(_u) : undefined);
+        u(n, "PX11679", document.body && document.body.offsetWidth + "x" + document.body.offsetHeight || "");
+        du("PX12419", n);
+        }
+    }
+    Ju(false);
+    }
+}
+
+Yu("PX11994");
 ```
 
 ### PX12002
 ```javascript
+Yu("PX12002");
 ```
 
 ### PX12003
 ```javascript
+t.PX12003 = screen && +screen.pixelDepth || 0;
 ```
 
 ### PX12013
 ```javascript
+function si(t) {
+    try {
+        var n = [document.getElementsByTagName("iframe"), document.getElementsByTagName("frame")];
+        for (var r = 0; r < n.length; r++) {
+        var a = n[r];
+        for (var o = 0; o < a.length; o++) {
+            var i = pi(a[o], qc);
+            if (-1 !== i) {
+            return void t("PX12013", i);
+            }
+        }
+        }
+    } catch (t) {}
+}
 ```
 
 ### PX12015
-```javascript
-```
+n / a
 
 ### PX12027
 ```javascript
+function (e, n) {
+    if (e && e.length) {
+    var r = [];
+    for (var a = 0; a < e.length; a++) {
+        r.push(Zo(e[a]));
+    }
+    Oc("PX12027", u({}, "PX11976", r), true);
+}
 ```
 
 ### PX12030
 ```javascript
+function Gd(t) {
+    var e;
+    if (Qd) {
+    var r = function (t) {
+        try {
+        if (!t || !t.isTrusted) {
+            return false;
+        }
+        var e = Io(t);
+        if (!e) {
+            return false;
+        }
+        var n = e.getClientRects();
+        var r = {
+            x: n[0].left + n[0].width / 2,
+            y: n[0].top + n[0].height / 2
+        };
+        var a = Math.abs(r.x - t.clientX);
+        var o = Math.abs(r.y - t.clientY);
+        if (a < 1 && o < 1) {
+            return {
+            centerX: a,
+            centerY: o
+            };
+        }
+        } catch (t) {}
+        return null;
+    }(t);
+    if (r) {
+        Yd++;
+        var a = Io(t);
+        var o = Zo(a);
+        var i = No(a);
+        u(e = {}, "PX11652", o);
+        u(e, "PX12305", r.centerX);
+        u(e, "PX11311", r.centerY);
+        u(e, "PX11427", i.top);
+        u(e, "PX12208", i.left);
+        u(e, "PX11824", a.offsetWidth);
+        u(e, "PX11631", a.offsetHeight);
+        u(e, "PX12129", Yd);
+        lf("PX12030", e);
+        if (5 <= Yd) {
+        Qd = false;
+        Wd(false);
+        }
+    }
+    }
+}
 ```
 
 ### PX12032
 ```javascript
+r.PX12032 = n.webGLVersion;
 ```
 
 ### PX12037
 ```javascript
+t.PX12037 = !!(navigator.doNotTrack || null === navigator.doNotTrack || navigator.msDoNotTrack || window.doNotTrack);
 ```
 
 ### PX12040
 ```javascript
+u(n = {}, "PX12040", Bu);
 ```
 
 ### PX12051
