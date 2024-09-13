@@ -2457,23 +2457,33 @@ u(n = {}, "PX12040", Bu);
 
 ### PX12051
 ```javascript
+_c(document, "getElementsByTagNameNS", "PX12051");
 ```
 
 ### PX12072
 ```javascript
+function bo(t) {
+    var e = (window.performance && f(window.performance.now) === "function" ? window.performance.now() : +new Date()) - Ho[t];
+    Do[t] = Do[t] || {};
+    Do[t].s = Do[t].s ? Do[t].s + e : e;
+    Do[t].c = Do[t].c ? Do[t].c + 1 : 1;
+    return function (t) {
+    return t >= 0 ? parseInt(t) : undefined;
+    }(e);
+}
+u(e, "PX12072", bo(Uc));
 ```
 
 ### PX12073
 ```javascript
+t.PX11460 = !!window.PX12073 || !!window.callPhantom;
 ```
 
 ### PX12085
-```javascript
-```
+n / a
 
 ### PX12092
-```javascript
-```
+n / a
 
 ### PX12095
 ```javascript
